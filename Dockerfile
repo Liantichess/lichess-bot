@@ -13,10 +13,7 @@ RUN wget "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z" -O G
 && 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z && mv Goi5.1.bin engines/books/Goi5.1.bin
 
 RUN wget https://abrok.eu/stockfish/latest/linux/stockfish_x64_bmi2.zip -O stockfish.zip
-#&& wget --no-check-certificate -nv "https://tests.stockfishchess.org/api/nn/nn-3475407dc199.nnue" -O nn-3475407dc199.nnue \
-&& 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* stockfish15
-
-RUN chmod +x stockfish15
-#Engine name ^^^^^^^^^^^^^^^^^^^
+RUN unzip stockfish.zip && rm stockfish.zip
+RUN mv stockfish_* engines/stockfish && chmod +x engines/stockfish
 
 CMD python3 lichess-bot.py -u
