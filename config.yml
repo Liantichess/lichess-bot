@@ -2,7 +2,7 @@ token: "xxxxxxxxxxxxxxxx"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
-  dir: "./engines/"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
+  dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
   name: "stockfish15"        # Binary name of the engine to use.
   working_dir: ""            # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
   protocol: "uci"            # "uci", "xboard" or "homemade"
@@ -130,7 +130,7 @@ challenge:                   # Incoming challenges.
     - fromPosition
 #   - antichess
 #   - atomic
-    - chess960
+#   - chess960
 #   - crazyhouse
 #   - horde
 #   - kingOfTheHill
@@ -139,12 +139,12 @@ challenge:                   # Incoming challenges.
   time_controls:             # Time controls to accept.
     - bullet
     - blitz
-    - rapid
-    - classical
-    - correspondence
+#   - rapid
+#   - classical
+#   - correspondence
   modes:                     # Game modes to accept.
     - casual                 # Unrated games.
-    - rated                  # Rated games - must comment if the engine doesn't try to win.
+#   - rated                  # Rated games - must comment if the engine doesn't try to win.
 # block_list:                # List of users from which the challenges are always declined.
 #   - user1
 #   - user2
