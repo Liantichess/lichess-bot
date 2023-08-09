@@ -5,8 +5,8 @@ COPY . .
 
 # If you want to run any other commands use "RUN" before.
 
-RUN apt install python3-pip
-RUN pip install --no-cache-dir -r requirements.txt > pip.log
+RUN apt-get update && apt-get install -y python3-pip
+RUN pip3 install --no-cache-dir -r requirements.txt > pip.log
 
 RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z" -O Goi5.1.bin.7z \
 && 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z && mv Goi5.1.bin engines/books/Goi5.1.bin
