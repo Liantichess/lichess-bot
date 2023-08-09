@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 MAINTAINER OIVAS7572
 RUN echo OIVAS7572
 COPY . .
